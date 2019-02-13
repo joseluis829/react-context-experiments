@@ -15,3 +15,7 @@ class Grandmother extends React.Component {
 const Mother = ({ lastName }) => {
     return <Child lastName={lastName} />;
 };
+
+const Child = ({ lastName }) => {
+    return <p>{lastName}</p>;
+};

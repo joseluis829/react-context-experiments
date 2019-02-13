@@ -1,6 +1,7 @@
 import React from "react";
+import { FamilyConsumer, FamilyProvider } from "./2_FamilyContext";
 
-class Grandmother extends Component {
+class Grandmother extends React.Component {
     state = { lastName: "Sanchez" };
     render() {
         return (
