@@ -14,3 +14,5 @@ const AccountProfile = ({
         <AccountUpdate username={username} membershipLevel={membershipLevel} />
     </React.Fragment>
 );
+
+export default AccountProfile;

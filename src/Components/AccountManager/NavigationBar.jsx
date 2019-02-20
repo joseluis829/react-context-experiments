@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "module";
+import { Link } from "react-router-dom";
 
 const NavigationBar = ({ username }) => (
     <div>

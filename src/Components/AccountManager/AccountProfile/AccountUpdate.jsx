@@ -1,6 +1,6 @@
 import React from "react";
 
-class AccountUpdate extends Component {
+class AccountUpdate extends React.Component {
     state = {
         username: this.props.username,
         membershipLevel: this.props.membershipLevel
