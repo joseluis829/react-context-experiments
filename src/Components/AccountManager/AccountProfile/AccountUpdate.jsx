@@ -27,6 +27,7 @@ class AccountUpdate extends React.Component {
                             onChange={this.handleOnChange}
                         />
                     </div>
+                    <label htmlFor="membershipLevel">Membership Level</label>
                     <div>
                         <select
                             value={membershipLevel}
