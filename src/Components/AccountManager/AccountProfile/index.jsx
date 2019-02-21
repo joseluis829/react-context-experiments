@@ -1,18 +1,19 @@
 import React from "react";
 import AccountDetails from "./AccountDetails";
 import AccountUpdate from "./AccountUpdate";
+import * as Styles from "./styles";
 
 const AccountProfile = ({
     account: { username, dateJoined, membershipLevel }
 }) => (
-    <React.Fragment>
+    <Styles.AccountProfile>
         <AccountDetails
             username={username}
             dateJoined={dateJoined}
             membershipLevel={membershipLevel}
         />
         <AccountUpdate username={username} membershipLevel={membershipLevel} />
-    </React.Fragment>
+    </Styles.AccountProfile>
 );
 
 export default AccountProfile;

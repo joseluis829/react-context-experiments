@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavigationBar from "./Components/AccountManager/NavigationBar";
 import AccountProfile from "./Components/AccountManager/AccountProfile";
 
@@ -13,14 +13,14 @@ const App = () => (
     <Router>
         <React.Fragment>
             <NavigationBar username={account.username} />
-            <React.Switch>
-                <Route exact path="/" render={() => <div>Home</div>} />
+            <Switch>
+                <Route exact path="/" render={() => <div>Home Screen</div>} />
                 <Route
                     exact
                     path="/account/profile"
                     render={() => <AccountProfile account={account} />}
                 />
-            </React.Switch>
+            </Switch>
         </React.Fragment>
     </Router>
 );

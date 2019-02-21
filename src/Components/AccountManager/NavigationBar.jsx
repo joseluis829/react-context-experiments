@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as Styles from "./styles";
 
 const NavigationBar = ({ username }) => (
-    <div>
+    <Styles.NavigationBar>
         <Link to="/">Home</Link>
         <Link to="/account/profile">{username}</Link>
-    </div>
+    </Styles.NavigationBar>
 );
 
 export default NavigationBar;

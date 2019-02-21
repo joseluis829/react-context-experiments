@@ -1,4 +1,5 @@
 import React from "react";
+import * as Styles from "./styles";
 
 class AccountUpdate extends React.Component {
     state = {
@@ -15,7 +16,7 @@ class AccountUpdate extends React.Component {
     render() {
         const { membershipLevel, username } = this.state;
         return (
-            <div>
+            <Styles.AccountUpdate>
                 <form>
                     <label htmlFor="username">New Username</label>
                     <div>
@@ -39,7 +40,7 @@ class AccountUpdate extends React.Component {
                     </div>
                     <button>Save</button>
                 </form>
-            </div>
+            </Styles.AccountUpdate>
         );
     }
 }

@@ -1,11 +1,12 @@
 import React from "react";
+import * as Styles from "./styles";
 
 const AccountDetails = ({ username, dateJoined, membershipLevel }) => (
-    <div>
+    <Styles.AccountDetails>
         <p>Username: {username}</p>
         <p>Date Joined: {dateJoined}</p>
         <p>Membership Level: {membershipLevel}</p>
-    </div>
+    </Styles.AccountDetails>
 );
 
 export default AccountDetails;
