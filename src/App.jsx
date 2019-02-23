@@ -2,27 +2,28 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavigationBar from "./Components/AccountManager/NavigationBar";
 import AccountProfile from "./Components/AccountManager/AccountProfile";
-
-const account = {
-    username: "Crunchy Crunch",
-    dateJoined: "9/1/18",
-    membershipLevel: "Silver"
-};
+import AccountProvider from "./Components/AccountManager/providers/AccountProvider";
 
 const App = () => (
-    <Router>
-        <React.Fragment>
-            <NavigationBar username={account.username} />
-            <Switch>
-                <Route exact path="/" render={() => <div>Home Screen</div>} />
-                <Route
-                    exact
-                    path="/account/profile"
-                    render={() => <AccountProfile account={account} />}
-                />
-            </Switch>
-        </React.Fragment>
-    </Router>
+    <AccountProvider>
+        <Router>
+            <React.Fragment>
+                <NavigationBar />
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <div>Home Screen</div>}
+                    />
+                    <Route
+                        exact
+                        path="/account/profile"
+                        component={AccountProfile}
+                    />
+                </Switch>
+            </React.Fragment>
+        </Router>
+    </AccountProvider>
 );
 
 export default App;

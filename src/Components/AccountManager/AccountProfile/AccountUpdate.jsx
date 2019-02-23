@@ -1,5 +1,6 @@
 import React from "react";
 import * as Styles from "./styles";
+import { AccountConsumer } from "../providers/AccountProvider";
 
 class AccountUpdate extends React.Component {
     state = {
@@ -13,17 +14,25 @@ class AccountUpdate extends React.Component {
         });
     };
 
+    handleOnSubmit = event => {
+        event.preventDefault();
+        const updatedAccount = { ...this.state };
+        this.props.updateAccount(updatedAccount);
+    };
+
     render() {
         const { membershipLevel, username } = this.state;
+        const usernameValue = username === this.props.username ? "" : username;
+
         return (
             <Styles.AccountUpdate>
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
                     <label htmlFor="username">New Username</label>
                     <div>
                         <input
                             type="text"
                             name="username"
-                            value={username}
+                            value={usernameValue}
                             onChange={this.handleOnChange}
                         />
                     </div>
@@ -46,4 +55,17 @@ class AccountUpdate extends React.Component {
     }
 }
 
-export default AccountUpdate;
+const ConnectedAccountUpdate = props => (
+    <AccountConsumer>
+        {({ username, membershipLevel, updateAccount }) => (
+            <AccountUpdate
+                {...props}
+                username={username}
+                membershipLevel={membershipLevel}
+                updateAccount={updateAccount}
+            />
+        )}
+    </AccountConsumer>
+);
+
+export default ConnectedAccountUpdate;

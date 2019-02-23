@@ -3,16 +3,10 @@ import AccountDetails from "./AccountDetails";
 import AccountUpdate from "./AccountUpdate";
 import * as Styles from "./styles";
 
-const AccountProfile = ({
-    account: { username, dateJoined, membershipLevel }
-}) => (
+const AccountProfile = () => (
     <Styles.AccountProfile>
-        <AccountDetails
-            username={username}
-            dateJoined={dateJoined}
-            membershipLevel={membershipLevel}
-        />
-        <AccountUpdate username={username} membershipLevel={membershipLevel} />
+        <AccountDetails />
+        <AccountUpdate />
     </Styles.AccountProfile>
 );
 
