@@ -1,9 +1,14 @@
 import React from "react";
+import { TreeContext } from "./providers/TreeFormProvider";
 
 class TreeFormStep1 extends React.Component {
     state = {};
     render() {
-        return <div>Step 1</div>;
+        return (
+            <TreeContext.Consumer>
+                {context => <div>{context.formData.name}</div>}
+            </TreeContext.Consumer>
+        );
     }
 }
 

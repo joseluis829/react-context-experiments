@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavigationBar from "./Components/AccountManager/NavigationBar";
 import AccountProfile from "./Components/AccountManager/AccountProfile";
 import AccountProvider from "./Components/AccountManager/providers/AccountProvider";
+import TreeForm from "./Components/TreeForm";
 
-const App = () => (
+const App = () => <TreeForm />;
+
+/*const App = () => (
     <AccountProvider>
         <Router>
             <React.Fragment>
@@ -24,6 +27,6 @@ const App = () => (
             </React.Fragment>
         </Router>
     </AccountProvider>
-);
+);*/
 
 export default App;
