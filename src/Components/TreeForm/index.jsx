@@ -3,16 +3,16 @@ import { Redirect, Route, Switch } from "react-router-dom";
 
 import { TreeContext } from "./providers/TreeFormProvider";
 import TreeFormStep1 from "./TreeFormStep1";
-// import TreeFormStep2 from "./TreeFormStep2";
-// import TreeFormStep3 from "./TreeFormStep3";
+import TreeFormStep2 from "./TreeFormStep2";
+import TreeFormStep3 from "./TreeFormStep3";
 
 class TreeForm extends React.Component {
     state = {
         formData: {
-            form_id: "",
-            name: "data form",
-            date: "",
-            build_id: "",
+            formId: "123",
+            name: "name form",
+            date: "date form",
+            buildId: "",
             unreleased: "",
             creating: true
         },
@@ -28,6 +28,8 @@ class TreeForm extends React.Component {
         return (
             <TreeContext.Provider value={this.state}>
                 <TreeFormStep1 />
+                <TreeFormStep2 />
+                <TreeFormStep3 />
             </TreeContext.Provider>
         );
     }
